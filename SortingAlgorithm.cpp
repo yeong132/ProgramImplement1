@@ -43,11 +43,13 @@ int main() {
 	switch (sort) {
 		case 1:
             sortAscending(numbers, input);
-            
+            break;  // 1번 케이스 실행 후 종료
 		case 2:
             sortDescending(numbers, input);
+            break;  // 2번 케이스 실행 후 종료
 	}
     printArray(numbers, input);
+    // break 문 없이 실행하니까 1을 입력해도 내림차순 정렬이 나옴..
 
 	return 0;
 }
