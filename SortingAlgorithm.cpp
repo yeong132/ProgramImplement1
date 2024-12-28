@@ -14,6 +14,7 @@ int main() {
 
     int input;
     int sort;
+    bool a = true;
     // 정적 배열 생성
     double numbers[max_input];
 
@@ -36,20 +37,26 @@ int main() {
     printArray(numbers, input);
     cout << "축하합니다! 이제 배열이 만들어졌으니 정렬을 해봅시다!" << endl << endl;
 	
-	cout << "1을 입력하면 오름차순 정렬, 2를 입력하면 내림차순 정렬이 됩니다!" << endl;
-	cout << "1 또는 2를 입력해주세요!" << endl;
-	cin >> sort;
+    while (a) {
+        cout << "1을 입력하면 오름차순 정렬, 2를 입력하면 내림차순 정렬이 됩니다!" << endl;
+        cout << "1 또는 2를 입력해주세요! 3을 누르면 실행이 종료됩니다!" << endl;
+        cin >> sort;
 
-	switch (sort) {
-		case 1:
+        switch (sort) {
+        case 1:
             sortAscending(numbers, input);
             break;  // 1번 케이스 실행 후 종료
-		case 2:
+        case 2:
             sortDescending(numbers, input);
             break;  // 2번 케이스 실행 후 종료
-	}
-    printArray(numbers, input);
-    // break 문 없이 실행하니까 1을 입력해도 내림차순 정렬이 나옴..
+        case 3:
+            a = false;
+            cout << "정렬이 유지된 상태로 마무리됩니다!" << endl;
+            break;  // 3번 케이스 실행 후 종료
+        }
+        printArray(numbers, input);
+        // break 문 없이 실행하니까 1을 입력해도 내림차순 정렬이 나옴..
+    }
 
 	return 0;
 }
